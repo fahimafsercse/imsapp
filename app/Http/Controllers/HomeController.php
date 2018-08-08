@@ -14,6 +14,14 @@ class HomeController extends Controller
         );
     	return view('home.salesindex')->with($data);
     }
+    public function offersales(){
+       
+    	return view('home.offersales');
+    }
+    public function membershipsales(){
+       
+    	return view('home.membershipsales');
+    }
     
 
 }

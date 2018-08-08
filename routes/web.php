@@ -14,8 +14,20 @@
 
 Route::get('/login', 'AuthenticationController@login');
 Route::get('/register', 'AuthenticationController@register');
+
+
+
 Route::get('/adminindex', 'AdminController@adminindex');
+Route::get('/useraccounts', 'AdminController@useraccounts');
+Route::get('/membershipadmin', 'AdminController@membershipadmin');
+Route::get('/offer', 'AdminController@offer');
+
+
+
+
 Route::get('/', 'HomeController@salesindex');
-Route::get('/register', 'HomeController@register');
+Route::get('/offersales', 'HomeController@offersales');
+Route::get('/membershipsales', 'HomeController@membershipsales');
+
 //Route::get('/about', 'PageController@about');
 //Route::get('/services', 'PageController@services');
