@@ -18,6 +18,7 @@
                                         <tr>
                                             <th>Name</th>
                                             <th>ID</th>
+                                            <th>Username</th>
                                             <th>Password</th>
                                             <th>User Type</th>
                                             <th>Email</th>
@@ -27,37 +28,19 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>01</td>
-                                            <td>*****</td>
-                                            <td>Admin</td>
-                                            <td>example@gmail.com</td>
-                                            <td>2011/04/25</td>
-                                            <td>$320,800</td>
-                                            <td>Edit</td>
-
-                                        </tr>
-                                        <tr>
-                                                <td>Tiger Nixon</td>
-                                                <td>01</td>
-                                                <td>*****</td>
-                                                <td>Admin</td>
-                                                <td>example@gmail.com</td>
-                                                <td>2011/04/25</td>
-                                                <td>$320,800</td>
-                                                <td>Delete</td>
+                                            @foreach($accountlist as $account)
+                                            <tr>
+                                                <td>{{$account->name}}</td>
+                                                <td>{{$account->account_id}}</td>
+                                                <td>{{$account->user_name}}</td>
+                                                <td>{{$account->password}}</td>
+                                                <td>{{$account->account_type_id}}</td>
+                                                <td>{{$account->email}}</td>
+                                                <td>{{$account->join_date}}</td>
+                                                <td>{{$account->salary}}</td>
+                                                <td><a href="#">Edit</a>|<a href="#">Delete</a></td>  
                                             </tr>
-                                        <tr>
-                                            <td>Garrett Winters</td>
-                                            <td>02</td>
-                                            <td>******</td>
-                                            <td>Sales</td>
-                                            <td>example@yahoo.com</td>
-                                            <td>2011/07/25</td>
-                                            <td>$170,750</td>
-                                            <td>Delete</td>
-                                        </tr>                               
+                                            @endforeach             
                                     </tbody>                                   
                                 </table>
                             </div>

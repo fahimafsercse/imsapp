@@ -1,5 +1,5 @@
 @extends('home.layouts.saleslayout')
 @section('content') 
-    hi from sales!
+    hi from sales index!
 @endsection
 

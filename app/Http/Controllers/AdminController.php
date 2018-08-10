@@ -5,13 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Category;
 use App\Offer;
+use App\Account;
+use App\Member;
 class AdminController extends Controller
 {
     public function adminindex(){
         return view('admin.adminindex');
     } 
     public function useraccounts(){
-        return view('admin.useraccounts');
+        
+        $result=  Account::all();
+        return view('admin.useraccounts')->with('accountlist', $result);
     } 
     public function offerlist(){
         /*return Offer::all();*/
@@ -23,7 +27,8 @@ class AdminController extends Controller
 
 
     public function membershipadmin(){
-        return view('admin.membershipadmin');
+        $result=  Member::all();
+        return view('admin.membershipadmin')->with('memberlist', $result);
     } 
     public function stocks(){
         return view('admin.stocks');

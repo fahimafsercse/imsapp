@@ -10,11 +10,7 @@ class HomeController extends Controller
 {
     //
     public function salesindex(){
-        $data = array(
-            'title' => 'Welcome to Mizy Store',
-            'desc' => 'Its a Grocery Store' 
-        );
-    	return view('home.salesindex')->with($data);
+    	return view('home.salesindex');
     }
 
     public function offersales(){

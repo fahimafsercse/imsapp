@@ -12,6 +12,7 @@
                     <div class="card">
                         <div class="card-body">
                             <center><h5 class="card-title">Membership Details</h5></center>
+                            <a href="/adminindex">Back to Home</a> | 
                             <div class="table-responsive">
                                 <table id="zero_config" class="table table-striped table-bordered">
                                     <thead>
@@ -28,28 +29,18 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                                <td>Adal Islam</td>
-                                                <td>0001</td>
-                                                <td>MT1</td>
-                                                <td>201-A Nakhalpara,farmgate</td>
-                                                <td>01620661913</td>
-                                                <td>adal@gmail.com</td>
-                                                <td>7/10/2018</td>
-                                                <td>20000000000</td>                                               
-                                                                                           
-                                        </tr>
-                                        <tr>
-                                                <td>Rukaiya</td>
-                                                <td>0002</td>
-                                                <td>MT2</td>
-                                                <td>201-A Mohakhali</td>
-                                                <td>01620661913</td>
-                                                <td>ruku@gmail.com</td>
-                                                <td>21/02/2018</td>
-                                                <td>200</td>                                               
-                                                
+                                            @foreach($memberlist as $member)
+                                            <tr>
+                                                <td>{{$member->member_name}}</td>
+                                                <td>{{$member->member_id}}</td>
+                                                <td>{{$member->member_type_id}}</td>
+                                                <td>{{$member->member_address}}</td>
+                                                <td>{{$member->member_phone}}</td>
+                                                <td>{{$member->member_email}}</td>
+                                                <td>{{$member->member_from}}</td>
+                                                <td>{{$member->total_shopping}}</td>
                                             </tr>
+                                            @endforeach    
                                                         
                                     </tbody>                                   
                                 </table>

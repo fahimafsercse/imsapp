@@ -12,7 +12,7 @@
                     <div class="card">
                         <div class="card-body">
                             <center><h5 class="card-title">Offers</h5></center>
-                            <a href="/salesindex">Back to Home</a> | 
+                            <a href="/">Back to Home</a> | 
                             <div class="table-responsive">
                                 <table id="zero_config" class="table table-striped table-bordered">
                                     <thead>
