@@ -12,54 +12,43 @@
                     <div class="card">
                         <div class="card-body">
                             <center><h5 class="card-title">Offers</h5></center>
+                            <a href="/adminindex">Back to Home</a> | 
+	                        <a href="#">Create New</a>
+	                        <br/><br/>
                             <div class="table-responsive">
                                 <table id="zero_config" class="table table-striped table-bordered">
                                     <thead>
                                         <tr>
-                                                <th>Name</th>
-                                                <th>Offer ID</th>                                                
-                                                <th>Description</th>
-                                                <th>Discount Percentage</th>
-                                                <th>Offer Given</th>
-                                                <th>Offer Valid</th>
-                                                <th>Item Code</th>
-                                                <th>Catagory ID</th>
-                                                <th>Member Type ID</th>
-                                                <th>Action</th>
-                                                
-                                                
+                                            <th>Name</th>
+                                            <th>Offer ID</th>                                                
+                                            <th>Description</th>
+                                            <th>Discount Percentage</th>
+                                            <th>Offer Given</th>
+                                            <th>Offer Valid</th>
+                                            <th>Item Code</th>
+                                            <th>Catagory ID</th>
+                                            <th>MemberTypeID</th>   
+                                            <th>Action</th>  
                                         </tr>
                                     </thead>
+                                    
                                     <tbody>
+                                        @foreach($offerlist as $offer)
                                         <tr>
-                                                <td>Eid offer</td>
-                                                <td>0001</td>
-                                                <td>Discount 10%</td>
-                                                <td>10</td>
-                                                <td>4/10/2018</td>
-                                                <td>7/10/2018</td>
-                                                <td>IC001</td>
-                                                <th>CT02</th>
-                                                <th>MT01</th>
-                                                <th>Edit</th>
-                                                
-                                                
+                                            <td>{{$offer->offer_name}}</td>
+                                            <td>{{$offer->offer_id}}</td>
+                                            <td>{{$offer->offer_description}}</td>
+                                            <td>{{$offer->discount}}</td>
+                                            <td>{{$offer->offer_from}}</td>
+                                            <td>{{$offer->offer_to}}</td>
+                                            <td>{{$offer->item_id}}</td>
+                                            <td>{{$offer->category_id}}</td>
+                                            <td>{{$offer->member_type_id}}</td>
+                                            <td><a href="#">Edit</a> | <a href="#">Delete</a></td>
+                                            
+
                                         </tr>
-                                        <tr>
-                                                <td>Boishakhi offer</td>
-                                                <td>0002</td>
-                                                <td>Discount 15%</td>
-                                                <td>15</td>
-                                                <td>4/10/2018</td>
-                                                <td>7/10/2018</td>
-                                                <td>IC002</td>
-                                                <th>CT02</th>
-                                                <th>MT02</th>
-                                                <th>Delete</th>
-                                                
-                                                
-                                            </tr>
-                                                        
+                                        @endforeach                                                                 
                                     </tbody>                                   
                                 </table>
                             </div>

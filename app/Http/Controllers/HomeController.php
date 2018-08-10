@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Offer;
+use App\Member;
 
 class HomeController extends Controller
 {
@@ -14,14 +16,27 @@ class HomeController extends Controller
         );
     	return view('home.salesindex')->with($data);
     }
+
     public function offersales(){
-       
-    	return view('home.offersales');
-    }
+        $result=  Offer::all();
+        return view('home.offersales')
+            ->with('offerlist', $result);
+    } 
+
     public function membershipsales(){
-       
-    	return view('home.membershipsales');
+        $result=  Member::all();
+        return view('home.membershipsales')
+            ->with('memberlist', $result);
     }
+    public function pos(){
+       
+    	return view('home.pos');
+    }
+    public function availableitems(){
+       
+    	return view('home.availableitems');
+    }
+   
     
 
 }

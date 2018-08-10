@@ -20,13 +20,22 @@ Route::get('/register', 'AuthenticationController@register');
 Route::get('/adminindex', 'AdminController@adminindex');
 Route::get('/useraccounts', 'AdminController@useraccounts');
 Route::get('/membershipadmin', 'AdminController@membershipadmin');
-Route::get('/offer', 'AdminController@offer');
+Route::get('/offer', 'AdminController@offerlist');
+Route::get('/log', 'AdminController@log');
+Route::get('/stocks', 'AdminController@stocks');
+
+Route::get('/category', 'AdminController@categorylist');
 
 
 
 
 Route::get('/', 'HomeController@salesindex');
-Route::get('/offersales', 'HomeController@offersales');
+Route::get('/pos', 'HomeController@pos');
+
+
+
+Route::get('/availableitems', 'HomeController@availableitems');
+Route::get('/offerlist', 'HomeController@offersales');
 Route::get('/membershipsales', 'HomeController@membershipsales');
 
 //Route::get('/about', 'PageController@about');
