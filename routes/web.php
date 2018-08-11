@@ -10,15 +10,27 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/','AuthenticationController@login');
 
-
-Route::get('/login', 'AuthenticationController@login');
-Route::get('/register', 'AuthenticationController@register');
 
 
 
 Route::get('/adminindex', 'AdminController@adminindex');
-Route::get('/useraccounts', 'AdminController@useraccounts');
+
+
+
+Route::get('/accounts', 'AdminController@accounts')->name('accounts');
+Route::get('/accounts/create', 'AdminController@createaccount')->name('createaccount');
+Route::post('/accounts/create', 'AdminController@accountstore');
+Route::get('/accounts/edit/{id}', 'AdminController@editaccount')->name('editaccount');
+Route::get('/accounts/delete/{id}', 'AdminController@deleteaccount')->name('deleteaccount');
+Route::post('/accounts/delete/{id}', 'AdminController@destroyaccount');
+Route::post('/accounts/edit/{id}', 'AdminController@updateaccount');
+
+
+
+
+
 Route::get('/membershipadmin', 'AdminController@membershipadmin');
 Route::get('/offer', 'AdminController@offerlist');
 Route::get('/log', 'AdminController@log');
@@ -29,8 +41,9 @@ Route::get('/category', 'AdminController@categorylist');
 
 
 
-Route::get('/', 'HomeController@salesindex');
+Route::post('/membershipsales/edit/{id}', 'HomeController@memberupdate');
 Route::get('/pos', 'HomeController@pos');
+Route::get('/salesindex', 'HomeController@salesindex');
 
 
 

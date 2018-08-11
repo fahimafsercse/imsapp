@@ -8,10 +8,11 @@
             <!-- Start Page Content -->
             <!-- ============================================================== -->
             <div class="row">
-                <div class="col-12">            
+                <div class="col-15">            
                     <div class="card">
                         <div class="card-body">
                             <center><h5 class="card-title">User Accounts</h5></center>
+                            <a href="/accounts/create" class ="btn btn-primary">Create New</a>
                             <div class="table-responsive">
                                 <table id="zero_config" class="table table-striped table-bordered">
                                     <thead>
@@ -20,8 +21,9 @@
                                             <th>ID</th>
                                             <th>Username</th>
                                             <th>Password</th>
-                                            <th>User Type</th>
+                                            <th>AccountType</th>
                                             <th>Email</th>
+                                            <th>Address</th>
                                             <th>Start date</th>
                                             <th>Salary</th>
                                             <th>Action</th>
@@ -36,21 +38,60 @@
                                                 <td>{{$account->password}}</td>
                                                 <td>{{$account->account_type_id}}</td>
                                                 <td>{{$account->email}}</td>
+                                                <td>{{$account->address}}</td>
                                                 <td>{{$account->join_date}}</td>
                                                 <td>{{$account->salary}}</td>
-                                                <td><a href="#">Edit</a>|<a href="#">Delete</a></td>  
+                                                <td>
+                                                    <a href="{{route('editaccount',['id'=>$account->account_id])}}" class ="btn btn-info">Edit</a>
+                                                    <a href="{{route('deleteaccount',['id'=>$account->account_id])}}" class ="btn btn-danger">Delete</a>
+                                                </td>
+                                                
+                                                
                                             </tr>
                                             @endforeach             
                                     </tbody>                                   
                                 </table>
+
+                                
                             </div>
 
                         </div>
                     </div>
                 </div>
             </div>
+
+            <div class="">
+                    <div class="col-4">            
+                        <div class="card">
+                            <div class="card-body float-right">
+                                <center><h5 class="card-title">User Catagory</h5></center>
+                                <a href="/accounts/createusertype" class ="btn btn-primary">Create New</a>
+                                <div class="table-responsive">
+                                        <table border="1" id="zero_config" class="">
+                                                <thead>
+                                                    <tr>
+                                                        <th>UTypeID</th>
+                                                        <th>UTypeName</th>        
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                        
+                                                        <tr>
+                                                            <td>02</td>
+                                                            <td>ADMIN</td>                              
+                                                        </tr>
+                                                              
+                                                </tbody>                                   
+                                            </table>
+                                </div>
+    
+                            </div>
+                        </div>
+                    </div>
+                </div>
             
         </div>
+        
     <!-- ============================================================== -->
     <!-- End Wrapper -->
     <!-- ============================================================== -->
@@ -66,5 +107,8 @@
          *       Basic Table                   *
          ****************************************/
         $('#zero_config').DataTable();
+
     </script>
+
+    
 @endsection

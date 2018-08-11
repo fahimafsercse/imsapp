@@ -224,7 +224,7 @@
                         <ul id="sidebarnav" class="p-t-30">
                             <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/adminindex" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Dashboard</span></a></li>
                             <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/stocks" aria-expanded="false"><i class="mdi mdi-chart-bar"></i><span class="hide-menu">Stocks</span></a></li>
-                            <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/useraccounts" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu">User Accounts</span></a></li>
+                            <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/accounts" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu">User Accounts</span></a></li>
                             <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/offer" aria-expanded="false"><i class="mdi mdi-blur-linear"></i><span class="hide-menu">Offer</span></a></li>
                             <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="/log" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Log</span></a>
                                 <ul aria-expanded="false" class="collapse  first-level">

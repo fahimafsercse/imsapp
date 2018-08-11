@@ -44,7 +44,7 @@
                                             <td>{{$offer->item_id}}</td>
                                             <td>{{$offer->category_id}}</td>
                                             <td>{{$offer->member_type_id}}</td>
-                                            <td><a href="#">Edit</a> | <a href="#">Delete</a></td>
+                                            <td><a href="#" class ="btn btn-info">Edit</a><a href="#" class ="btn btn-danger">Delete</a></td>  
                                             
 
                                         </tr>
