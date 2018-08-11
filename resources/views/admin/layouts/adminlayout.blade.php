@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{{asset('css/app.css')}}">
         <link rel="icon" type="image/png" sizes="16x16" href="{{asset('images/favicon.png')}}/">
+        <link href="{{asset('/css/backend_css/bootstrap.css')}}" rel="stylesheet">
        <!-- Custom CSS -->
        <link href="{{asset('libs/flot/css/float-chart.css')}}" rel="stylesheet">
        <link href="{{asset('dist/css/style.min.css')}}" rel="stylesheet">
@@ -15,6 +16,9 @@
        <link rel="stylesheet" href="{{asset('chosen/docsupport/style.css')}}">
        <link rel="stylesheet" href="{{asset('chosen/docsupport/prism.css')}}">
        <link rel="stylesheet" href="{{asset('chosen/chosen.css')}}">
+
+       <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+       <link href="{{asset('css/frontend_css/datepicker.css')}}" rel="stylesheet">
        <title>{{config('app.name', 'imsapp')}}</title>
     </head>
 
@@ -225,7 +229,7 @@
                             <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/adminindex" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Dashboard</span></a></li>
                             <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/stocks" aria-expanded="false"><i class="mdi mdi-chart-bar"></i><span class="hide-menu">Stocks</span></a></li>
                             <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/accounts" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu">User Accounts</span></a></li>
-                            <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/offer" aria-expanded="false"><i class="mdi mdi-blur-linear"></i><span class="hide-menu">Offer</span></a></li>
+                            <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/offers" aria-expanded="false"><i class="mdi mdi-blur-linear"></i><span class="hide-menu">Offer</span></a></li>
                             <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="/log" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Log</span></a>
                                 <ul aria-expanded="false" class="collapse  first-level">
                                     <li class="sidebar-item"><a href="form-basic.html" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Item Log </span></a></li>

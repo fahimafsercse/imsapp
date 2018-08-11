@@ -12,7 +12,8 @@
                     <div class="card">
                         <div class="card-body">
                             <center><h5 class="card-title">User Accounts</h5></center>
-                            <a href="/accounts/create" class ="btn btn-primary">Create New</a>
+                            <a href="{{route('createaccount')}}" class ="btn btn-primary">Create New</a>
+                           
                             <div class="table-responsive">
                                 <table id="zero_config" class="table table-striped table-bordered">
                                     <thead>

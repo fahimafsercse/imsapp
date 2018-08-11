@@ -10,6 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes();
+
+
 Route::get('/','AuthenticationController@login');
 
 
@@ -26,6 +29,15 @@ Route::get('/accounts/edit/{id}', 'AdminController@editaccount')->name('editacco
 Route::get('/accounts/delete/{id}', 'AdminController@deleteaccount')->name('deleteaccount');
 Route::post('/accounts/delete/{id}', 'AdminController@destroyaccount');
 Route::post('/accounts/edit/{id}', 'AdminController@updateaccount');
+
+
+Route::get('/offers', 'AdminController@offers')->name('offers');
+Route::get('/offers/create', 'AdminController@createoffer')->name('createoffer');
+Route::post('/offers/create', 'AdminController@offerstore');
+Route::get('/offers/edit/{id}', 'AdminController@editoffer')->name('editoffer');
+Route::get('/offers/delete/{id}', 'AdminController@deleteoffer')->name('deleteoffer');
+Route::post('/offers/delete/{id}', 'AdminController@destroyoffer');
+Route::post('/offers/edit/{id}', 'AdminController@updateoffer');
 
 
 

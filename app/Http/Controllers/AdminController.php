@@ -10,6 +10,7 @@ use App\Offer;
 use App\Account;
 use App\Member;
 use App\AccountType;
+use App\MemberType;
 class AdminController extends Controller
 {
 
@@ -32,7 +33,7 @@ class AdminController extends Controller
         $acc->password = $request->password;
         $acc->email = $request->email;
         $acc->address = $request->address;
-        $acc->salary = $request->salary;
+        $acc->salary = floatval($request->salary);
         $acc->account_type_id = $request->account_type_id;
         $acc->save();
         return redirect()->route('accounts');
@@ -58,7 +59,7 @@ class AdminController extends Controller
         $account->name = $request->name;
         $account->email = $request->email;
         $account->address = $request->address;
-        $account->salary = $request->salary;
+        $account->salary = floatval($request->salary);
         $account->account_type_id = $request->account_type_id;
        
         $account->save();
@@ -82,6 +83,80 @@ class AdminController extends Controller
 
 
 
+    //offer
+    public function offers(){
+        
+        $result=  Offer::all();
+
+        return view('admin.offer')
+            ->with('offerlist', $result);
+    } 
+    public function createoffer(){
+        $memberlist= MemberType::all();
+        $catlist= Category::all();
+        return view('admin.offerfunc.create')->with('membertype', $memberlist)->with('catlist', $catlist);
+    }
+    public function offerstore(Request $request){
+        //return $request;
+        Offer::create();
+        $offer = new Offer();
+        $offer->offer_name = $request->offer_name;
+        $offer->offer_description = $request->offer_description;
+        $offer->discount = floatval($request->discount);
+        $offer->offer_from = $request->offer_from;
+        $offer->offer_to = $request->offer_to;
+        $offer->item_id = $request->item_id;
+        $offer->category_id = $request->category_id;
+        $offer->member_type_id = $request->member_type_id;
+        $offer->save();
+        return redirect()->route('offers');
+        //return view('admin.useraccounts')->with('accountlist', $result);  
+    }  
+
+    public function editoffer($id){
+          $membertype=  MemberType::all();
+          $catlist = Category::all();
+          $offer = Offer::find($id);
+          return view('admin.offerfunc.edit')->with('membertype', $membertype)->with('catlist',$catlist)->with('offer',$offer);
+      }
+      public function deleteoffer($id){
+          $offer = Offer::find($id);
+          return view('admin.offerfunc.delete')->with('offer', $offer);
+      }
+  
+      public function updateoffer(Request $request, $id){
+         // return $request;
+          $offer  = Offer::find($request->offer_id);
+         // return $offer;
+          $offer->offer_name = $request->offer_name;
+          $offer->offer_description = $request->offer_description;
+          $offer->discount = floatval($request->discount);
+          $offer->offer_from = $request->offer_from;
+          $offer->offer_to = $request->offer_to;
+          $offer->item_id = $request->item_id;
+          $offer->category_id = $request->category_id;
+          $offer->member_type_id = $request->member_type_id;
+          $offer->save();
+          return redirect()->route('offers');
+         
+      }
+      public function destroyoffer(Request $request, $id){
+          Offer::destroy($request->offer_id);
+          return redirect()->route('offers'); 
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -92,14 +167,7 @@ class AdminController extends Controller
         return view('admin.adminindex');
     } 
     
-    public function offerlist(){
-        /*return Offer::all();*/
-        $result=  Offer::all();
-
-        return view('admin.offer')
-            ->with('offerlist', $result);
-    } 
-
+    
 
     public function membershipadmin(){
         $result=  Member::all();
